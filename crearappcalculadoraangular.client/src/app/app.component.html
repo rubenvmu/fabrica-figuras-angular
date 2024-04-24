@@ -1,24 +1,22 @@
+<header></header>
 <div class="container">
-  <h1>Calculator</h1>
   <div class="row">
     <div class="col-md-6">
       <form>
         <div class="form-group">
-          <label for="number1">Number 1:</label>
-          <input type="number" class="form-control" id="number1" name="number1" [(ngModel)]="a">
+          <input type="number" class="form-control" id="number1" name="number1" placeholder="Número 1" [(ngModel)]="a">
         </div>
         <div class="form-group">
-          <label for="number2">Number 2:</label>
-          <input type="number" class="form-control" id="number2" name="number2" [(ngModel)]="b">
+          <input type="number" class="form-control" id="number2" name="number2" placeholder="Número 1" [(ngModel)]="b">
         </div>
       </form>
     </div>
     <div class="col-md-6">
-      <button type="button" class="btn btn-primary" (click)="addNumbers()">Sumar</button>
-      <button type="button" class="btn btn-primary" (click)="subtractNumbers()">Restar</button>
-      <button type="button" class="btn btn-primary" (click)="multiplyNumbers()">Multiplicar</button>
-      <button type="button" class="btn btn-primary" (click)="divideNumbers()">Dividir</button>
-      <p>Result: {{ result }}</p>
+      <button type="button" class="btn btn-primary" (click)="addNumbers()">Sumar</button><br>
+      <button type="button" class="btn btn-primary" (click)="subtractNumbers()">Restar</button><br>
+      <button type="button" class="btn btn-primary" (click)="multiplyNumbers()">Multiplicar</button><br>
+      <button type="button" class="btn btn-primary" (click)="divideNumbers()">Dividir</button><br>
+      <p>Result: {{ result }}</p><br>
     </div>
   </div>
 </div>
