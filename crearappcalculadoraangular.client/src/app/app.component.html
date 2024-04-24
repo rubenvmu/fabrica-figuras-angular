@@ -1,0 +1,30 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+
+<table *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temp. (C)</th>
+      <th>Temp. (F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>{{ forecast.date }}</td>
+      <td>{{ forecast.temperatureC }}</td>
+      <td>{{ forecast.temperatureF }}</td>
+      <td>{{ forecast.summary }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container"> <form>  <div class="form-group">  <h1 class="text-center text-primary">Todo App</h1>   <div class="input-group-prepend">       <input type="text" class="form-control" placeholder="Add Todo" name="todo">    <span class="input-group-text">Add</span>   </div>  </div> </form></div>
+<input type="text" #todo class="form-control" placeholder="Add Todo" name="todo" ngModel>
+<input #myVariable type="text" name="text" ngModel>
+<p>{{myVariable.value}}</p>
+<p>{{todo.value}}</p>
