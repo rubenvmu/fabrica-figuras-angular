@@ -1,37 +1,33 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
+import { CalculatorService } from './calculator.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.css']
 })
-export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+export class CalculatorComponent implements OnInit {
+  result: number = 0; // initialize result property with a default value of 0
 
-  constructor(private http: HttpClient) {}
+  constructor(private calculatorService: CalculatorService) { }
 
-  ngOnInit() {
-    this.getForecasts();
+  ngOnInit(): void {
   }
 
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+  addNumbers(a: number, b: number): void {
+    this.result = this.calculatorService.sumar(a, b);
   }
 
-  title = 'crearappcalculadoraangular.client';
+  subtractNumbers(a: number, b: number): void {
+    this.result = this.calculatorService.restar(a, b);
+  }
+
+  multiplyNumbers(a: number, b: number): void {
+    this.result = this.calculatorService.multiplicar(a, b);
+  }
+
+  divideNumbers(a: number, b: number): void {
+    this.result = this.calculatorService.dividir(a, b);
+  }
 }
