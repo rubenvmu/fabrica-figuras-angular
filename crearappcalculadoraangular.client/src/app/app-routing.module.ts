@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { BrowserModule } from '@angular/platform-browser';
+import { Component } from '@angular/core';
+import { ServicioCalculadora } from './services/servicio.calculadora.service';
+import { ComponenteCalculadora } from './app.component';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [
+    ComponenteCalculadora,
+    ComponenteCalculadora // Add this line
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [ServicioCalculadora],
+  bootstrap: [ComponenteCalculadora]
 })
-export class AppRoutingModule { }
+export class AppModule { }

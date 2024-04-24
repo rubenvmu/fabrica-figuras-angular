@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.271090-alpha">
+﻿<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.271090-alpha">
   <PropertyGroup>
     <StartupCommand>npm start</StartupCommand>
     <JavaScriptTestFramework>Jasmine</JavaScriptTestFramework>
@@ -8,6 +8,9 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\crearappcalculadoraangular.client\</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="src\services\" />
+    <None Remove="src\app\app-routing.module.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\app\services\" />
   </ItemGroup>
 </Project>

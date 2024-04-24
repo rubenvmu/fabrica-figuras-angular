@@ -1,19 +1,18 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ServicioCalculadora } from './services/servicio.calculadora.service';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule, FormsModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ServicioCalculadora], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

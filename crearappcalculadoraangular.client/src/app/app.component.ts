@@ -1,33 +1,31 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { CalculatorService } from './calculator.service';
+import { Component } from '@angular/core';
+import { ServicioCalculadora } from './services/servicio.calculadora.service';
 
 @Component({
-  selector: 'app-calculator',
-  templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class CalculatorComponent implements OnInit {
-  result: number = 0; // initialize result property with a default value of 0
+export class AppComponent {
+  a: number = 0;
+  b: number = 0;
+  result: number = 0;
 
-  constructor(private calculatorService: CalculatorService) { }
+  constructor(private calculatorService: ServicioCalculadora) { }
 
-  ngOnInit(): void {
+  addNumbers() {
+    this.result = this.calculatorService.sumar(this.a, this.b);
   }
 
-  addNumbers(a: number, b: number): void {
-    this.result = this.calculatorService.sumar(a, b);
+  subtractNumbers() {
+    this.result = this.calculatorService.restar(this.a, this.b);
   }
 
-  subtractNumbers(a: number, b: number): void {
-    this.result = this.calculatorService.restar(a, b);
+  multiplyNumbers() {
+    this.result = this.calculatorService.multiplicar(this.a, this.b);
   }
 
-  multiplyNumbers(a: number, b: number): void {
-    this.result = this.calculatorService.multiplicar(a, b);
-  }
-
-  divideNumbers(a: number, b: number): void {
-    this.result = this.calculatorService.dividir(a, b);
+  divideNumbers() {
+    this.result = this.calculatorService.dividir(this.a, this.b);
   }
 }
