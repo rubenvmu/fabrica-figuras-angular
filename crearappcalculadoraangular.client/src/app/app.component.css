@@ -17,11 +17,6 @@ th, td {
     padding-right: 1rem;
 }
 
-
-header {
-  height: 20vh;
-}
-
 #image1 {
   height: 20px;
   width: 20px;
@@ -46,3 +41,6 @@ header {
     height: 10vh;
 }
 
+#obligatorio {
+    color: red;
+}

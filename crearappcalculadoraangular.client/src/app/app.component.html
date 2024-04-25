@@ -1,6 +1,6 @@
-<header></header>
-
-<div><b>Ejercicio07</b></div>
+<div id="separador"></div>
+<div><b>Ejercicio 07</b></div>
+<div>Calculadora / Superficies de Círculo y Cuadrado</div>
 <div id="separador"></div>
 
 <div class="container">
@@ -43,42 +43,50 @@
 </div>
 
 <div id="separador"></div>
-<div><b>Ejercicio08</b></div>
-<div id="separador"></div>
 
 <div class="container control-form">
   <div class="row">
-    <div class="col-md-6">
+    <div id="col1" class="col-md-6">
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="image-selection" id="image1" value="image1">
+        <input class="form-check-input" type="radio" name="image-selection" id="image1" value="image1" [(ngModel)]="imageSelection">
         <label class="form-check-label" for="image1">
           <img id="circulo" src="https://static.vecteezy.com/system/resources/thumbnails/011/148/564/small/moon-design-illustration-isolated-on-transparent-background-free-png.png" alt="Image 1" class="img-fluid">
         </label>
       </div>
-      <label for="numero3">Calcular superficie del círculo <br> <b>(ingresar longitud radio)</b></label>&nbsp;
-      <input type="number" class="form-control" id="numero3" name="numero3" placeholder="Radio del círculo" [(ngModel)]="radio">&nbsp;<br>
-      &nbsp;<button type="button" class="btn btn-secondary" (click)="calcularSuperficieCirculo()">Calcular</button>
-      <br>&nbsp;
-      <br>&nbsp;
-      <p id="superficiecuadrado">{{superficiecirculo}}</p>
+      <div *ngIf="imageSelection === 'image1'">
+        <label for="numero3">Calcular superficie del círculo <br> <b>(ingresar longitud radio)</b></label>&nbsp;
+        <input type="number" class="form-control" id="numero3" name="numero3" placeholder="Radio del círculo" [(ngModel)]="radio">&nbsp;<br>
+        &nbsp;<button type="button" class="btn btn-secondary" (click)="calcularSuperficieCirculo()">Calcular 🟡</button>
+        <br>&nbsp;
+        <p id="superficiecirculo">
+          {{superficiecirculo}} <select name="select">
+            <option value="value1">cm</option>
+            <option value="value2" selected>m</option>
+            <option value="value3">km</option>
+          </select><br>
+        </p>
+      </div>
     </div>
-    <div class="col-md-6">
+    <div id="col2" class="col-md-6">
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="image-selection" id="image2" value="image2">
+        <input class="form-check-input" type="radio" name="image-selection" id="image2" value="image2" [(ngModel)]="imageSelection">
         <label class="form-check-label" for="image2">
           <img id="cuadrado" src="https://i.pinimg.com/originals/39/98/08/399808c7787f2c87cfa2b217deb4245b.png" alt="Image 2" class="img-fluid">
         </label>
       </div>
-      <label for="numero4">Calcular superficie del cuadrado<br> <b>(ingresar longitud lado)</b></label>&nbsp;
-      <input type="number" class="form-control" id="numero4" name="numero4" placeholder="Lado del cuadrado" [(ngModel)]="lado">&nbsp;<br>
-      &nbsp;<button type="button" class="btn btn-secondary" (click)="calcularSuperficieCuadrado()">Calcular</button>
-      <br>&nbsp;
-      <br>&nbsp;
-      <p id="superficiecuadrado">{{superficiecuadrado}}</p>
+      <div *ngIf="imageSelection === 'image2'">
+        <label for="numero4">Calcular superficie del cuadrado<br> <b>(ingresar longitud lado)</b></label>&nbsp;
+        <input type="number" class="form-control" id="numero4" name="numero4" placeholder="Lado del cuadrado" [(ngModel)]="lado">&nbsp;<br>
+        &nbsp;<button type="button" class="btn btn-secondary" (click)="calcularSuperficieCuadrado()">Calcular 🟩</button>
+        <br>&nbsp;
+        <p id="superficiecuadrado">
+          {{superficiecuadrado}} <select name="select">
+            <option value="value1">cm</option>
+            <option value="value2" selected>m</option>
+            <option value="value3">km</option>
+          </select><br>
+        </p>
+      </div>
     </div>
   </div>
 </div>
-
-<div id="separador"></div>
-<div><b>Ejercicio09</b></div>
-<div id="separador"></div>

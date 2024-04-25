@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ServicioCalculadora } from './services/servicio.calculadora.service';
 import { CirculoService } from './services/servicio.calculadora.circulo.service';
 import { CuadradoService } from './services/servicio.calculadora.cuadrado.service';
+import { ServicioValidador } from './services/servicio.validador.service';
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,19 @@ export class AppComponent {
   lado: number = 0;
   superficiecirculo: number = 0;
   superficiecuadrado: number = 0;
+  imageSelection: string = 'image1';
+  inputValue: string = '';
+  isValid: boolean = false;
 
-  constructor(private calculatorService: ServicioCalculadora, private circuloService: CirculoService, private cuadradoService: CuadradoService) { }
+  constructor(public calculatorService: ServicioCalculadora, public circuloService: CirculoService, public cuadradoService: CuadradoService, public ServicioValidador: ServicioValidador) { }
+
+  ngOnInit() {
+    this.isValid = this.ServicioValidador.esValido(this.inputValue);
+  }
+
+  updateValidity() {
+    this.isValid = this.ServicioValidador.esValido(this.inputValue);
+  }
 
   addNumbers() {
     this.result = this.calculatorService.sumar(this.a, this.b);
