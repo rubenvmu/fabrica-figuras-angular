@@ -19,5 +19,30 @@ th, td {
 
 
 header {
-    height:20vh;
+  height: 20vh;
 }
+
+#image1 {
+  height: 20px;
+  width: 20px;
+}
+
+#image2 {
+  height: 20px;
+  width: 20px;
+}
+
+#circulo {
+  height: 100px;
+  width: 100px;
+}
+
+#cuadrado {
+  height: 100px;
+  width: 100px;
+}
+
+#separador {
+    height: 10vh;
+}
+
